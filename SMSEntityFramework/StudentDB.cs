@@ -96,6 +96,12 @@ namespace SMSEntityFramework
             }
         }
 
+        /// <summary>
+        /// if StudentID is 0, will be added
+        /// else will be updated based on StudentID
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static Student AddOrUpdate(Student s)
         {
             using (var context = new StudentContext())
