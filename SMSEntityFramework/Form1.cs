@@ -31,6 +31,9 @@ namespace SMSEntityFramework
             List<Student> allStus = StudentDB.GetAllStudents();
             MessageBox.Show("Total stus " + allStus.Count);
 
+            stu.FullName = "Mr. Bob";
+            StudentDB.Update(stu);
+
             StudentDB.Delete(stu);
             allStus = StudentDB.GetAllStudents();
             MessageBox.Show("Total stus " + allStus.Count);

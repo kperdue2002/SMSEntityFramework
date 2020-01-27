@@ -50,6 +50,10 @@ namespace SMSEntityFramework
             return stu;
         }
 
+        /// <summary>
+        /// deletes a student from the database by their studentID
+        /// </summary>
+        /// <param name="s"></param>
         public static void Delete(Student s)
         {
             using (var context = new StudentContext())
@@ -59,7 +63,7 @@ namespace SMSEntityFramework
                 context.Database.Log = Console.WriteLine;
 #endif
 
-                context.Students.Add(s);
+                context.Students.Attach(s);
                 context.Entry(s).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -74,6 +78,32 @@ namespace SMSEntityFramework
             {
                 context2.Dispose();
             }*/
+        }
+
+        /// <summary>
+        /// updates all student data except for the primary key
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static Student Update(Student s)
+        {
+            using(var context = new StudentContext())
+            {
+                context.Students.Attach(s);
+                context.Entry(s).State = EntityState.Modified;
+                context.SaveChanges();
+                return s;
+            }
+        }
+
+        public static Student AddOrUpdate(Student s)
+        {
+            using (var context = new StudentContext())
+            {
+                context.Entry(s).State = (s.StudentId == 0) ? EntityState.Added : EntityState.Modified;
+                context.SaveChanges();
+                return s;
+            }
         }
     }
 }
