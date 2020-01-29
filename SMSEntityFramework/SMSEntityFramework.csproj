@@ -68,6 +68,14 @@
     <Compile Include="Migrations\202001222216295_AddedStudent.designer.cs">
       <DependentUpon>202001222216295_AddedStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001292142382_AlterStuDatatypes.cs" />
+    <Compile Include="Migrations\202001292142382_AlterStuDatatypes.designer.cs">
+      <DependentUpon>202001292142382_AlterStuDatatypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001292149008_StuNameRequired.cs" />
+    <Compile Include="Migrations\202001292149008_StuNameRequired.designer.cs">
+      <DependentUpon>202001292149008_StuNameRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +87,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001222216295_AddedStudent.resx">
       <DependentUpon>202001222216295_AddedStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001292142382_AlterStuDatatypes.resx">
+      <DependentUpon>202001292142382_AlterStuDatatypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001292149008_StuNameRequired.resx">
+      <DependentUpon>202001292149008_StuNameRequired.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
